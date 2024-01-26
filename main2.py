@@ -74,6 +74,10 @@ class TodoApp:
         # Atualiza a lista de tarefas na interface gráfica
         self.update_todo_listbox()
 
+        # Vincula o evento de seleção da lista de tarefas à função select_todo
+        self.todo_listbox.bind("<<ListboxSelect>>", self.select_todo)
+
+
     def add_todo(self, event=None):
         todo_text = self.todo_entry.get().strip()
         if todo_text:
